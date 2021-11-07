@@ -1,0 +1,14 @@
+{
+	"name": "R Shiny",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"args": {
+			"SHINY_VERSION": "latest",
+		}
+	},
+	"runArgs": [
+		"--env-file",
+		".env",
+	],
+	"remoteUser": "vscode",
+}
