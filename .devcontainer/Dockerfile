@@ -1,13 +1,15 @@
-# Load variables
+# Select image
 ARG SHINY_VERSION
-
-# Choice image
 FROM rocker/shiny:${SHINY_VERSION}
 
 # Create vscode user
-RUN useradd -ms /bin/bash vscode
-
-# Update apt
-RUN apt update \
+RUN groupadd --gid 1000 vscode \
+	&& useradd --uid 1000 --gid 1000 -m vscode \
+	&& apt-get update \
 	&& apt upgrade -y \
-	&& apt install git -y
+	&& apt-get install -y sudo \
+	&& echo vscode ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/vscode \
+	&& chmod 0440 /etc/sudoers.d/vscode
+
+# Install git
+RUN apt install git -y
