@@ -2,6 +2,7 @@
 	"name": "R Shiny",
 	"build": {
 		"dockerfile": "Dockerfile",
+		"context": "..",
 		"args": {
 			"SHINY_VERSION": "latest",
 		}
