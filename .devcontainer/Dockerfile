@@ -12,4 +12,8 @@ RUN groupadd --gid 1000 vscode \
 	&& chmod 0440 /etc/sudoers.d/vscode
 
 # Install git
-RUN apt install git -y
+RUN apt install git zsh -y
+
+# Install ohmyzsh
+USER vscode
+RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
