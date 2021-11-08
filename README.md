@@ -1,2 +1,1 @@
-# devcontainer-rshiny
-R-Shiny dev container for VS Code
+# Try Out Development Containers: Shiny (R)
