@@ -6,9 +6,5 @@
 			"SHINY_VERSION": "latest",
 		}
 	},
-	"runArgs": [
-		"--env-file",
-		".env",
-	],
 	"remoteUser": "vscode",
 }
