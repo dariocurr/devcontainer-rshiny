@@ -14,15 +14,14 @@ RUN groupadd --gid 1000 vscode \
 # install git
 RUN apt install git zsh -y
 
+# install R packages
+COPY requirements*.txt /tmp/r-tmp/
+COPY .devcontainer/requirements.sh /tmp/r-tmp/
+RUN Rscript -e "install.packages('devtools')" \
+	&& ./tmp/r-tmp/requirements.sh \
+	&& rm -rf /tmp/r-tmp/
+
 # install ohmyzsh
 USER vscode
 RUN sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 COPY .devcontainer/.zshrc .
-
-# install R packages
-COPY requirements*.txt /tmp/r-tmp/
-# RUN sudo while IFS=" " read -r package version; \
-# 	do \
-# 	Rscript -e "devtools::install_version('"$package"', version='"$version"')"; \
-# 	done < "/tmp/r-tmp/requirements.txt" \
-# 	&& rm -rf /tmp/r-tmp
