@@ -16,12 +16,12 @@ RUN apt install git zsh -y
 
 # install ohmyzsh
 USER vscode
-RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+RUN sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 COPY .devcontainer/.zshrc .
 
 # install R packages
 COPY requirements*.txt /tmp/r-tmp/
-# RUN while IFS=" " read -r package version; \
+# RUN sudo while IFS=" " read -r package version; \
 # 	do \
 # 	Rscript -e "devtools::install_version('"$package"', version='"$version"')"; \
 # 	done < "/tmp/r-tmp/requirements.txt" \
