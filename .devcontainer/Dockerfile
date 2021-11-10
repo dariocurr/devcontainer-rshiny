@@ -13,7 +13,7 @@ RUN groupadd --gid 1000 vscode \
 	&& chmod 0440 /etc/sudoers.d/vscode
 
 # install git
-RUN apt install git zsh -y
+RUN apt install git zsh xdg-utils -y
 
 # install R packages
 COPY requirements*.txt /tmp/r-tmp/
