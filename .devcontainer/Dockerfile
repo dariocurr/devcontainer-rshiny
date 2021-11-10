@@ -1,6 +1,7 @@
 # select image
-ARG SHINY_VERSION
+ARG SHINY_VERSION="latest"
 FROM rocker/shiny:${SHINY_VERSION}
+LABEL author="dariocurr@gmail.com" maintainer="dariocurr@gmail.com" version="0.0.1"
 
 # create vscode user
 RUN groupadd --gid 1000 vscode \
@@ -18,8 +19,8 @@ RUN apt install git zsh -y
 COPY requirements*.txt /tmp/r-tmp/
 COPY .devcontainer/requirements.sh /tmp/r-tmp/
 RUN Rscript -e "install.packages('devtools')" \
-	&& ./tmp/r-tmp/requirements.sh \
-	&& rm -rf /tmp/r-tmp/
+	&& sudo sh ./tmp/r-tmp/requirements.sh \
+	&& sudo rm -rf /tmp/r-tmp/
 
 # install ohmyzsh
 USER vscode
