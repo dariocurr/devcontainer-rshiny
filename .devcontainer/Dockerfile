@@ -19,7 +19,7 @@ RUN apt install git zsh -y
 COPY requirements*.txt /tmp/r-tmp/
 COPY .devcontainer/requirements.sh /tmp/r-tmp/
 RUN Rscript -e "install.packages('devtools')" \
-	&& sudo ./tmp/r-tmp/requirements.sh \
+	&& sudo sh ./tmp/r-tmp/requirements.sh \
 	&& sudo rm -rf /tmp/r-tmp/
 
 # install ohmyzsh
