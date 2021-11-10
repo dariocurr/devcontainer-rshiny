@@ -1,5 +1,5 @@
 # select image
-ARG SHINY_VERSION
+ARG SHINY_VERSION="latest"
 FROM rocker/shiny:${SHINY_VERSION}
 LABEL author="dariocurr@gmail.com" maintainer="dariocurr@gmail.com" version="0.0.1"
 
