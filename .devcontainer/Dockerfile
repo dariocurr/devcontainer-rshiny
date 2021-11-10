@@ -16,11 +16,11 @@ RUN groupadd --gid 1000 vscode \
 RUN apt install git zsh -y
 
 # install R packages
-COPY requirements*.txt /tmp/r-tmp/
-COPY .devcontainer/requirements.sh /tmp/r-tmp/
+COPY requirements*.txt tmp/r-tmp/
+COPY .devcontainer/requirements.sh tmp/r-tmp/
 RUN Rscript -e "install.packages('devtools')" \
-	&& ./tmp/r-tmp/requirements.sh \
-	&& rm -rf /tmp/r-tmp/
+	&& .tmp/r-tmp/requirements.sh \
+	&& rm -rf tmp/r-tmp/
 
 # install ohmyzsh
 USER vscode
