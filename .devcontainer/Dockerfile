@@ -1,6 +1,7 @@
 # select image
 ARG SHINY_VERSION
 FROM rocker/shiny:${SHINY_VERSION}
+LABEL author="dariocurr@gmail.com" maintainer="dariocurr@gmail.com" version="0.0.1"
 
 # create vscode user
 RUN groupadd --gid 1000 vscode \
