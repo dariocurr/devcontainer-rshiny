@@ -3,9 +3,7 @@
 	"build": {
 		"dockerfile": "Dockerfile",
 		"context": "..",
-		"args": {
-			"SHINY_VERSION": "latest",
-		}
+		"args": {}
 	},
 	"remoteUser": "vscode",
 }
