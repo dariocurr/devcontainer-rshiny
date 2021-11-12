@@ -12,8 +12,8 @@ RUN groupadd --gid 1000 vscode \
 	&& echo vscode ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/vscode \
 	&& chmod 0440 /etc/sudoers.d/vscode
 
-# install git
-RUN apt install git zsh xdg-utils -y
+# install git zsh and other useful packages
+RUN apt install git libudunits2-dev libgdal-dev libssl-dev xdg-utils zsh -y
 
 # install R packages
 COPY requirements*.txt /tmp/r-tmp/
