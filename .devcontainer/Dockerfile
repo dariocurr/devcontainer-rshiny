@@ -1,3 +1,5 @@
+# for format details, see https://docs.docker.com/engine/reference/builder/
+
 # select image
 ARG SHINY_VERSION="latest"
 FROM rocker/shiny:${SHINY_VERSION}
