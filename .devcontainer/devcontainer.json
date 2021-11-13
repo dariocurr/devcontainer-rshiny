@@ -1,9 +1,10 @@
+// for format details, see https://aka.ms/vscode-remote/devcontainer.json
 {
 	"name": "R Shiny",
 	"build": {
 		"dockerfile": "Dockerfile",
 		"context": "..",
-		"args": {}
+		// avoid specifying args here to prevent errors when using classic docker build
 	},
 	"remoteUser": "vscode",
 }
