@@ -12,7 +12,7 @@ This is a template project that using a _dev container_, automatically
 configures a **Shiny (R)** development environment with few easy steps.
 
 > Checkout others
-> [`devcontainer` template projects](https://github.com/dariocurr?tab=repositories&q=devcontainer)
+> [_devcontainer_ template projects](https://github.com/dariocurr?tab=repositories&q=devcontainer)
 
 This template includes a
 **[GitHub Action](https://github.com/features/actions)** which ensures that any
