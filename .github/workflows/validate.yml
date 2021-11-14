@@ -6,6 +6,7 @@ on:
   push:
     paths-ignore:
       - ".vscode/**"
+      - ".gitignore"
       - "LICENSE"
       - "README.md"
     branches:
