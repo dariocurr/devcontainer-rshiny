@@ -8,9 +8,9 @@ LABEL author="dariocurr@gmail.com" maintainer="dariocurr@gmail.com" version="0.0
 # create vscode user
 RUN groupadd --gid 1000 vscode \
 	&& useradd --uid 1000 --gid 1000 -m vscode \
-	&& apt-get update \
+	&& apt update \
 	&& apt upgrade -y \
-	&& apt-get install -y sudo \
+	&& apt install -y sudo \
 	&& echo vscode ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/vscode \
 	&& chmod 0440 /etc/sudoers.d/vscode
 
