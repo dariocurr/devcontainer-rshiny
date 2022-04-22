@@ -5,7 +5,6 @@ name: Validate
 on:
   push:
     paths-ignore:
-      - ".vscode/**"
       - ".gitignore"
       - "LICENSE"
       - "README.md"
@@ -19,12 +18,11 @@ jobs:
   validation:
     runs-on: ubuntu-latest
     steps:
-    
       - name: Checkout
         uses: actions/checkout@v2
 
       - name: Build the Docker image
-        run: docker build . --file .devcontainer/Dockerfile --tag devcontainer-rshiny:$(date +%s)
+        run: docker build . --file .devcontainer/Dockerfile
 
       - name: Merge dev with main branch
         uses: devmasx/merge-branch@master
