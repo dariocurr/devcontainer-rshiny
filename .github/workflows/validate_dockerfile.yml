@@ -19,7 +19,7 @@ jobs:
   validate_dockerfile:
     uses: dariocurr/actions/.github/workflows/validate_dockerfile.yml@main
     with:
-      dockerfile: ./.devcontainer
+      dockerfile: ./.devcontainer/Dockerfile
       merge: true
       from: dev
       to: main
