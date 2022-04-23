@@ -18,8 +18,8 @@ RUN groupadd --gid 1000 vscode \
 RUN apt -qq install git libudunits2-dev libgdal-dev libssl-dev xdg-utils zsh -y
 
 # install R packages
-COPY requirements*.txt /tmp/r-tmp/
-COPY .devcontainer/requirements.sh /tmp/r-tmp/
+COPY ./requirements*.txt /tmp/r-tmp/
+COPY ./.devcontainer/requirements.sh /tmp/r-tmp/
 RUN Rscript -e "install.packages('devtools', quiet=TRUE)" \
 	&& sudo sh ./tmp/r-tmp/requirements.sh \
 	&& sudo rm -rf /tmp/r-tmp/
@@ -29,4 +29,4 @@ USER vscode
 WORKDIR /home/vscode/
 RUN sudo apt -qq install zsh -y \
 	&& git clone -q https://github.com/zsh-users/antigen.git .antigen
-ADD --chown=vscode https://git.io/JMakD .zshrc
+ADD --chown=vscode https://gist.githubusercontent.com/dariocurr/9792ae1fb6ddf736d8fea9e20eb13e26/raw/ .zshrc
