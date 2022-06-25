@@ -4,7 +4,9 @@
 	"build": {
 		"dockerfile": "Dockerfile",
 		"context": "..",
-		// avoid specifying args here to prevent errors when using classic docker build
+		"args": {
+			"USER": "rshiny"
+		}
 	},
-	"remoteUser": "vscode",
+	"remoteUser": "rshiny"
 }
