@@ -1,4 +1,4 @@
-name: Validate Dockerfile
+name: validate Dockerfile
 
 on:
   push:
